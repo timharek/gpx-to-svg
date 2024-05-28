@@ -1,0 +1,28 @@
+image: alpine/edge
+packages:
+  - deno
+secrets:
+  - 6a295705-4fb6-451c-990c-9a12b0aa0dc2
+environment:
+  dir: gpx-to-svg
+triggers:
+  - action: email
+    condition: failure
+    to: tim@harek.no
+tasks:
+  - test: |
+      cd $dir
+      deno task check
+      deno task test
+  - check: |
+      cd $dir
+      if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD)" ]; then \
+        complete-build; \
+      fi
+  - new_release: |
+      set +x
+      export JSR_API=$(cat ~/jsr_timharek)
+      cd $dir
+      deno publish --allow-slow-types --token $JSR_API
+      set -x
+

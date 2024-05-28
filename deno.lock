@@ -1,0 +1,46 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@libs/typing@2": "jsr:@libs/typing@2.0.4",
+      "jsr:@libs/xml@5.2.0": "jsr:@libs/xml@5.2.0",
+      "jsr:@std/assert@^0.225.3": "jsr:@std/assert@0.225.3",
+      "jsr:@std/internal@^1.0.0": "jsr:@std/internal@1.0.0",
+      "npm:zod@3.23.8": "npm:zod@3.23.8"
+    },
+    "jsr": {
+      "@libs/typing@2.0.4": {
+        "integrity": "59636777b9abe93c268b0ffacff4b5ec7c88a6757d40fdea45795012ad36e02b"
+      },
+      "@libs/xml@5.2.0": {
+        "integrity": "ebe9fbb6bc0ce0f46f46ba485238c80463b35621be99ac5906bc5f8cfacd8980",
+        "dependencies": [
+          "jsr:@libs/typing@2"
+        ]
+      },
+      "@std/assert@0.225.3": {
+        "integrity": "b3c2847aecf6955b50644cdb9cf072004ea3d1998dd7579fc0acb99dbb23bd4f",
+        "dependencies": [
+          "jsr:@std/internal@^1.0.0"
+        ]
+      },
+      "@std/internal@1.0.0": {
+        "integrity": "ac6a6dfebf838582c4b4f61a6907374e27e05bedb6ce276e0f1608fe84e7cd9a"
+      }
+    },
+    "npm": {
+      "zod@3.23.8": {
+        "integrity": "sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "dependencies": [
+      "jsr:@libs/xml@5.2.0",
+      "jsr:@std/assert@^0.225.3",
+      "npm:zod@3.23.8"
+    ]
+  }
+}
